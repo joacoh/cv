@@ -5,7 +5,7 @@ Academic Resume / Curriculum Vitae
 
 [download]: https://github.com/joacoh/cv/blob/main/cv.pdf
 
-This repository store the academic resume and curriculum vitae for Joaquín Hernández-Yévenes (Universidad de Concepción, Concepción, Chile).
+This repository store the academic resume and curriculum vitae for Joaquín Hernández-Yévenes (Universidad de Concepción, Concepción, Chile 🇨🇱).
 
 ![CV 1st page](cover.png)
 
