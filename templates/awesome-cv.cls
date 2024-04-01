@@ -614,6 +614,17 @@
 }{%
   \end{center}
 }
+
+ % as \cventry, but squashed up to meet more recent role above; no company/location.
+\newcommand{\cventryprevrole}[3]{
+  \vspace{-4.0mm}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+    \entrypositionstyle{#1}  & \entrydatestyle{#2}
+    & \descriptionstyle{#3}
+  \end{tabular*}
+}
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
 \newcommand*{\cventry}[5]{%
@@ -739,7 +750,7 @@
 \newcommand*{\cvwebsite}[2]{%
   \texttt{%
     \normalfont%
-    \color{awesome-nephritis}
+    \color{awesome-skyblue}
     \href{#1}{#2}%
 }}
 
