@@ -19,7 +19,7 @@
 \documentclass[11pt, a4paper]{templates/awesome-cv}
 
 % Configure page margins with geometry
-\geometry{left=1cm, top=.6cm, right=1cm, bottom=1.4cm, footskip=.5cm}
+\geometry{left=1.1cm, top=.8cm, right=1.1cm, bottom=1.4cm, footskip=.8cm}
 
 % Specify the location of the included fonts
 \fontdir[fonts/]
@@ -60,7 +60,7 @@
 
 % Print the header with above personal information
 % Give optional argument to change alignment(C: center, L: left, R: right)
-\makecvheader[L]
+\makecvheader[C]
 
 % Print the footer with 3 arguments(<left>, <center>, <right>)
 % Leave any of these blank if they are not needed
@@ -74,11 +74,13 @@
 \input{data/education.tex}
 \input{data/experience}
 \input{data/publications.tex}
+\newpage
+\input{data/skills.tex}
+\input{data/certificates}
 \input{data/proposals.tex}
 \input{data/teaching.tex}
 \input{data/outreach.tex}
-\input{data/community.tex}
-\input{data/certificates}
-\input{data/skills.tex}
+
+
 %-------------------------------------------------------------------------------
 \end{document}
