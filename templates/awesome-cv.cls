@@ -68,6 +68,7 @@
 \RequirePackage{setspace}
 % Needed to manage fonts
 \RequirePackage[quiet]{fontspec}
+\RequirePackage{academicons}
 % Needed to stop tabular from overflowing to many pages
 \RequirePackage{longtable}
 % To support LaTeX quoting style
@@ -126,9 +127,9 @@
 % Gray-scale colors
 \definecolor{white}{HTML}{FFFFFF}
 \definecolor{black}{HTML}{000000}
-\definecolor{darkgray}{HTML}{333333}
-\definecolor{gray}{HTML}{5D5D5D}
-\definecolor{lightgray}{HTML}{999999}
+\definecolor{darkgray}{HTML}{000000}
+\definecolor{gray}{HTML}{000000}
+\definecolor{lightgray}{HTML}{000000}
 % Basic colors
 \definecolor{green}{HTML}{C2E15F}
 \definecolor{orange}{HTML}{FDA333}
@@ -136,19 +137,19 @@
 \definecolor{red}{HTML}{FB4485}
 \definecolor{blue}{HTML}{6CE0F1}
 % Text colors
-\definecolor{darktext}{HTML}{414141}
+\definecolor{darktext}{HTML}{000000}
 \colorlet{text}{darkgray}
 \colorlet{graytext}{gray}
 \colorlet{lighttext}{lightgray}
 % Awesome colors
 \definecolor{awesome-emerald}{HTML}{00A388}
-\definecolor{awesome-skyblue}{HTML}{0395DE}
+\definecolor{awesome-skyblue}{HTML}{0A4578}
 \definecolor{awesome-red}{HTML}{DC3522}
 \definecolor{awesome-pink}{HTML}{EF4089}
 \definecolor{awesome-orange}{HTML}{FF6138}
-\definecolor{awesome-nephritis}{HTML}{27AE60}
-\definecolor{awesome-concrete}{HTML}{95A5A6}
-\definecolor{awesome-darknight}{HTML}{131A28}
+\definecolor{awesome-nephritis}{HTML}{000000}
+\definecolor{awesome-concrete}{HTML}{000000}
+\definecolor{awesome-darknight}{HTML}{000000}
 \colorlet{awesome}{awesome-red}
 
 % Boolean value to switch section color highlighting
@@ -325,6 +326,10 @@
 % Defines writer's linked-in (optional)
 % Usage: \linkedin{<linked-in-nick>}
 \newcommand*{\linkedin}[1]{\def\@linkedin{#1}}
+
+% Defines writer's orcid (optional)
+% Usage: \orcid{<id>}
+\newcommand*{\orcid}[1]{\def\@orcid{#1}}
 
 % Usage: \twitter{<twitter handle>}
 \newcommand*{\twitter}[1]{\def\@twitter{#1}}
@@ -528,6 +533,12 @@
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
           \href{https://www.linkedin.com/in/\@linkedin}{\faLinkedinSquare\acvHeaderIconSep\@linkedin}%
+        }%
+      \ifthenelse{\isundefined{\@orcid}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{https://www.orcid.org/\@orcid}{\aiOrcid\acvHeaderIconSep\@orcid}%
         }%
       \ifthenelse{\isundefined{\@twitter}}%
         {}%
