@@ -1,0 +1,259 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2015 Xavier Danaux (xdanaux@gmail.com), 2020-2024 moderncv maintainers (github.com/moderncv).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+\moderncvcolor{cerulean}                           % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'; for contemporary style use 'cerulean'
+% moderncv themes
+\moderncvstyle[noqr]{contemporary}                     % style options are 'casual' (default), 'classic', 'banking', 'oldstyle', 'fancy' and 'contemporary'
+                                                   % the 'contemporary' style optionally takes the `qr` (default) or `noqr` options
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% adjust the page margins
+\usepackage[hmargin=0.5in,vmargin=10pt]{geometry}                  % the 'contemporary' style looks better with reduced margins; uncomment the line below for increased margin
+%\usepackage[scale=0.75]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+%\setlength{\listitemsymbolspace}{10pt}            % set custom spacing between list symbol and text item (influences \cvlistitem and \cvlistdoubleitem)
+
+% the 'contemporary' style allows to append additional elements to the head background; uncomment and customize if needed
+%\def\@moderncvheadBackground{
+%}
+
+% font loading
+% for luatex and xetex, do not use inputenc and fontenc
+% see https://tex.stackexchange.com/a/496643
+
+\ifxetexorluatex
+  \usepackage{fontspec}
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX}
+  \setmainfont{Latin Modern Roman}
+  \setsansfont{Latin Modern Sans}
+  \setmonofont{Latin Modern Mono}
+  \setmathfont{Latin Modern Math}
+
+  % you may also consider Fira Sans Light for a extra modern look
+  \setsansfont[ItalicFont={Fira Sans Light Italic},%
+             BoldFont={Fira Sans},%
+             BoldItalicFont={Fira Sans Italic}]%
+             {Fira Sans Light}%
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+\fi
+
+% document language
+\usepackage[english]{babel}  % FIXME: using spanish breaks moderncv
+
+% personal data
+\name{J.}{Hernández-Yévenes}
+\title{Astronomer, PhD(c)}                               % optional, remove / comment the line if not wanted
+%\born{4 July 1776}                                 % optional, remove / comment the line if not wanted
+%\address{street and number}{postcode city}{country}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
+%\phone[mobile]{+1~(234)~567~890}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
+%\phone[fixed]{+2~(345)~678~901}
+%\phone[fax]{+3~(456)~789~012}
+\email{jheryev@gmail.com}                               % optional, remove / comment the line if not wanted
+\homepage{joacoh.github.io}                         % optional, remove / comment the line if not wanted
+
+% Social icons
+\social[linkedin]{jhyevenes}                        % optional, remove / comment the line if not wanted
+%\social[xing]{john\_doe}                           % optional, remove / comment the line if not wanted
+
+\social[github]{joacoh}                              % optional, remove / comment the line if not wanted
+%\social[gitlab]{jdoe}                              % optional, remove / comment the line if not wanted
+%\social[codeberg]{jdoe}                            % optional, remove / comment the line if not wanted
+%\social[bitbucket]{jdoe}                           % optional, remove / comment the line if not wanted
+%\social[stackoverflow]{0000000/johndoe}            % optional, remove / comment the line if not wanted
+
+%\social[skype]{jdoe}                               % optional, remove / comment the line if not wanted
+\social[orcid]{0000-0001-5845-7538}                  % optional, remove / comment the line if not wanted
+%\social[researchgate]{jdoe}                        % optional, remove / comment the line if not wanted
+%\social[researcherid]{jdoe}                        % optional, remove / comment the line if not wanted
+%\social[googlescholar]{googlescholarid}            % optional, remove / comment the line if not wanted
+
+%\social[twitter]{ji\_doe}                          % optional, remove / comment the line if not wanted
+%\social[mastodon]{mastodon.social/web/@user}       % optional, remove / comment the line if not wanted
+%\social[telegram]{jdoe}                            % optional, remove / comment the line if not wanted
+%\social[whatsapp]{12345678901}                     % optional, remove / comment the line if not wanted
+%\social[signal]{12345678901}                       % optional, remove / comment the line if not wanted
+%\social[matrix]{@johndoe:matrix.org}               % optional, remove / comment the line if not wanted
+%\social[discord]{jdoe\#0000}                       % optional, remove / comment the line if not wanted
+
+% YouTube links can take several forms, depending on how your account and channel are set up.
+% See https://support.google.com/youtube/answer/6180214 for more information.
+%\social[youtube]{c/jdoeschannel}                   % optional, remove / comment the line if not wanted; Custom URL             - can be shorted by removing 'c/'
+%\social[youtube]{channel/XXXXXX}                   % optional, remove / comment the line if not wanted; Channel URL (ID-based) - can not be shortened
+%\social[youtube]{user/jdoe}                        % optional, remove / comment the line if not wanted; Legacy username URL    - if jdoe is not already claimed by a Custom URL, can be shortened by removing 'user/'
+
+%\social[twitch]{jdoe}                              % optional, remove / comment the line if not wanted
+%\social[tiktok]{jdoe}                              % optional, remove / comment the line if not wanted
+%\social[instagram]{jdoe}                           % optional, remove / comment the line if not wanted
+
+%\social[soundcloud]{jdoe}                          % optional, remove / comment the line if not wanted
+
+%\social[steam]{jdoe}                               % optional, remove / comment the line if not wanted
+%\social[xbox]{jdoe}                                % optional, remove / comment the line if not wanted
+%\social[playstation]{jdoe}                         % optional, remove / comment the line if not wanted
+%\social[battlenet]{jdoe\#0000}                     % optional, remove / comment the line if not wanted
+%\social[arxiv]{doe\_j\_1}                          % optional, remove / comment the line if not wanted
+%\social[inspire]{0000000}                          % optional, remove / comment the line if not wanted
+%\social[simplex]{0000000}                          % optional, remove / comment the line if not wanted
+%\social[threema]{0000000}                          % optional, remove / comment the line if not wanted
+
+
+%\extrainfo{additional information}                 % optional, remove / comment the line if not wanted
+%\photo[64pt][2pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 2pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+%\quote{Some quote}                                 % optional, remove / comment the line if not wanted
+
+% bibliography adjustments (only useful if you make citations in your resume, or print a list of publications using BibTeX)
+%   to show numerical labels in the bibliography (default is to show no labels)
+\makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
+
+
+
+% bibliography with multiple entries
+%\usepackage{multibib}
+\renewcommand*{\refname}{Articles}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+
+\section{Education}  % for 'contemporary' style use optional argument for displaying an icon, e.g. \section[\faGraduationCap]{Education}
+\cventry{2025--present}{PhD in Astrophysics}{Swinburne University of Technology}{Melbourne, Australia}{}{Advisor: Dr. Deanne Fisher \& Dr. Rebecca Davies (co)}  % arguments 3 to 6 can be left empty
+\cventry{2022--2024}{MSc in Astronomy}{Universidad de Concepción}{Concepción, Chile}{6.6/7.0}{Advisor: Dr. Neil Nagar\newline{}
+Thesis: \href{https://repositorio.udec.cl/items/3f4aff0c-7bde-4495-a70f-e3bb9ad9f763}{A scaling-based algorithm for probing supermassive black hole masses through WISE photometry}}
+\cventry{2018--2021}{BSc in Astronomy}{Universidad de Concepción}{Concepción, Chile}{6.6/7.0}{}
+
+\section{Experience}
+\cventry{2024--2025}{Research Assistant}{Núcleo Milenio TITANS}{Concepción, Chile}{}{
+\begin{itemize}
+        \item{Co-advised a master's thesis on supermassive black hole binary systems.}
+        \item{Maintained WISE2MBH's internal-pipeline, public-pipeline and python library, consolidating their use for the ETHER database.}
+        \item{Developed a custom pipeline for scraping and processing SDSS spectra using pPXF.}
+        \item{Managed to optimize the time in observation proposals by 25\% by implementing clustering algorithms.}
+        \item{Author of 3 publications related to the ETHER database and its possible uses.}
+\end{itemize}}
+\cventry{2022--2024}{Research Assistant}{Universidad de Concepción}{Concepción, Chile}{}{
+\begin{itemize}
+        \item{Developed the WISE2MBH algorithm to address data completeness in the ETHER database.}
+        \item{Author in 3 publications, presenting at conferences and securing +100 hours of observation time.}
+        \item{Responsible for conducting practical classes, elaborating and evaluating assignments and exams for two final year courses.}
+\end{itemize}}
+\cventry{2023}{Research Internship}{Harvard University}{Cambridge, USA}{}{
+\begin{itemize}
+        \item{Late stage development of the WISE2MBH algorithm that estimate supermassive black hole masses from WISE data.}
+        \item{Explore uses for EHT, ngEHT, and ALMA to present proposals based on the algorithm estimates and population predictions.}
+        \item {Discussion about WISE2MBH parent and final sample, and possible interest of the community.}
+        \item{Discussion over super massive black hole binary candidates and strategies to detect them.}
+\end{itemize}}
+
+\section{Publications}
+
+\cvitem {$\bullet$}{\textbf{Hernández-Yévenes, J.}, Jarrett, T. H., Nagar, N., Cluver, M. E., Arratia, V. Evaluating and harmonizing systematics of diverse indirect $M_{BH}$ estimators for SMBHs. \textit{in prep.}, 2025.}
+
+\cvitem {$\bullet$}{Arratia, V., Nagar, N., \textbf{Hernández-Yévenes, J.}, Nair, D. G., Silpa, S., et al. ETHER-FP: Exploring the fundamental plane of black hole activity and radio emission mechanisms in active galactic nuclei. \textit{in prep.}, 2025.}
+
+\cvitem {$\bullet$}{\textbf{Hernández-Yévenes, J.}, Nagar, N., Arratia, V., Jarrett, T. H. Using WISE cataloged data for morphology, bulge fraction and black hole mass estimation. \textit{XVII LARIM Proceedings}, 2025.}
+
+\cvitem {$\bullet$}{Nair, D. G., Nagar, N. M., Ramakrishnan, V., Wielgus, M., \textbf{et al.} | Demographics of black holes at $<$100 R$_{g}$ scales: accretion flows, jets, and shadows. \textit{XVI EVNS Proceedings}, December 2024.}
+
+\cvitem {$\bullet$}{\textbf{Hernández-Yévenes, J.}, Nagar, N., Arratia, V., Jarrett, T. H. WISE2MBH: a scaling-based algorithm for probing supermassive black hole masses through WISE catalogues. \textit{MNRAS}, July 2024.}
+
+
+\cvitem {$\bullet$}{Ramakrishnan, V., Nagar, N., Arratia, V., \textbf{Hernández-Yévenes, J.}, et al. | Event Horizon and Environs (ETHER): A Curated Database for EHT and ngEHT Targets and Science. \textit{Galaxies}, January 2023.}
+
+\newpage
+
+\section{Languages}
+\cvitemwithcomment{Spanish}{Native}{}
+\cvitemwithcomment{English}{C1}{TOEFL}
+
+\section{Skills}
+        \cvitem
+        {\textbf{Soft Skills}}
+    {Leadership, Communication, Problem Solving, Goal Orientation}
+	\cvitem
+	{\textbf{Programming}}
+    {Python, SQL, Bash, \TeX, HTML5, CSS}
+        \cvitem
+        {\textbf{Software}}
+    {TopCat, Excel, DS9, SSMS, PowerBI}
+        \cvitem
+	{\textbf{Libraries}}
+    {NumPy, Pandas, Matplotlib, Seaborn, AstroPy, SciPy, PyTorch, Tensorflow, statsmodels, scikit-learn}
+
+\section{Academic/Outreach activities}
+    \cvitem
+	{Academic Talk}
+	{\href{https://joacoh.github.io/talks/2024-12-13-talk}{Do SMBH mass estimates agree one to each other?: A study on the systematics of indirect MBH estimators in the ETHER database}, \textbf{TITANs Annual Meeting | Dec, 2024}}
+
+    \cvitem
+	{Workshop Lead}
+	{\href{https://joacoh.github.io/talks/2024-12-12-talk}{Statistical methods: Bootstrap, sliding-window and statistical tests}, \textbf{TITANs Annual Meeting | Dec, 2024}}
+
+    \cvitem
+	{Conference Poster}
+	{\href{https://joacoh.github.io/talks/2023-11-29-talk}{Using WISE cataloged data for morphology, bulge fraction and black hole mass estimation}, \textbf{XVII LARIM | Nov, 2023}}
+
+    \cvitem
+	{Outreach Talk}
+	{\href{https://joacoh.github.io/talks/2022-11-04-talk}{La nueva generación del Telescopio Horizonte de Eventos (ngEHT) y Chile}, \textbf{Universidad de Concepción | Nov, 2022}}
+
+\section{Teaching}
+    \cvitem
+	{Undergrad Assistantship}
+	{Extragalactic Astrophysics, Prof. in charge: Dr. Ricardo Demarco | \textit{S2, 2023}}
+
+    \cvitem
+	{Undergrad Assistantship}
+	{Radioastronomy, Prof. in charge: Dr. Neil Nagar | \textit{S2, 2023}}
+	
+\section{Workshops \& Certificates}
+\cvitemwithcomment{2024}{TOEFL iBT (C1 proficiency), \textbf{ETS}}{\href{https://joacoh.github.io/files/toefl.pdf}{Certificate}}
+
+\cvitemwithcomment{2024}{Machine Learning Specialization, \textbf{DeepLearning.AI \& Stanford University}}{\href{https://www.coursera.org/account/accomplishments/specialization/9ZUV9TSH2GB6}{Certificate}}
+
+\cvitemwithcomment{2023}{Certification in Machine Learning with Python, \textbf{freeCodeCamp}}{\href{https://www.freecodecamp.org/certification/_joacoh/machine-learning-with-python-v7}{Certificate}}
+
+\cvitemwithcomment{2022}{Certification in Data Analysis with Python, \textbf{freeCodeCamp}}{\href{https://freecodecamp.org/certification/_joacoh/data-analysis-with-python-v7}{Certificate}}
+
+\cvitemwithcomment{2022}{Certification in Scientific Computing with Python, \textbf{freeCodeCamp}}{\href{https://freecodecamp.org/certification/_joacoh/scientific-computing-with-python-v7}{Certificate}}
+
+\cvitemwithcomment{2022}{Certification in Cloud Computing, \textbf{Google \& Esc. de Org. Industrial}}{\href{https://joacoh.github.io/files/cloud_certificate.pdf}{Certificate}}
+
+\cvitemwithcomment{2021}{School of Physics of the Master in Physical Sciences, \textbf{Universidad del Bío-Bío}}{}
+
+\section{Successful PI and Co-PI observing proposals}
+
+\cvitem{2024}{Imaging M84 at < 50 gravitational radii: jets and accretion inflow (Resubmission), Co-PI (\textbf{PI: Neil Nagar}), 8 hours (12M), Priority B, \textbf{ALMA Cycle 11}}
+
+\cvitem{2023}{Towards resolving orbiting binary SMBH, plus shadows, jets, and accretion flows of single SMBH: ACA fluxes, \textbf{PI}, 72.6 hours (7M), Priority C, \textbf{ALMA Cycle 10}}
+
+\cvitem{2023}{A sample of SMBH shadows, rings, accretion flows and jet bases: exploratory EHT+ALMA flux measurements, Co-PI (\textbf{PI: Neil Nagar}), 45 hours (12M), Priority B, \textbf{ALMA Cycle 10}}
+
+\cvitem{2022}{A sample of black holes at < 100 Rg scales: accretion flows, jets, and shadows, Co-PI (\textbf{PI: Dhanya Nair}), 22 hours (7mm), Priority A, \textbf{VLBA 2023A}}
+
+\cvitem{2022}{A sample of SMBH shadows, rings, accretion flows and jet bases: exploratory EHT+ALMA flux measurements, Co-PI (\textbf{PI: Neil Nagar}), 36 hours (12M), Priority B, \textbf{ALMA Cycle 9}}
+
+\cvitem{2022}{NGC4261: the 2nd jet at < 50 gravitational radii (and the 3rd black hole shadow?), Co-PI (\textbf{PI: Neil Nagar}), 6 hours (12M), Priority B, \textbf{ALMA Cycle 9}}
+
+
+
+\end{document}
+
+
+%% end of file `template.tex'.
